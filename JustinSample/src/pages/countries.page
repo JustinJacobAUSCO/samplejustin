@@ -1,0 +1,16 @@
+<apex:page controller="CountryController">
+    <apex:form >
+        <apex:pageBlock Title="JSON Parser Example - Multiple Data">
+            <apex:commandButton value="Parse Multiple JSON Data" action="{!parseJSONData}"
+                reRender="countryData" />
+        </apex:pageBlock>
+        <br />
+        <apex:pageBlock id="countryData">
+            <apex:pageBlockTable value="{!countries}" var="country">
+                <apex:column headerValue="Country Name" value="{!country.countryName}"/> 
+                <apex:column headerValue="Country Capital" value="{!country.countryCapital}"/> 
+                <apex:column headerValue="Country Currency" value="{!country.countryCurrency}"/> 
+        </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

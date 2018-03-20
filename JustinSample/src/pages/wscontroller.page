@@ -1,0 +1,7 @@
+<apex:page controller="WSController2">
+ Date Modified: {!info.DateModifiedUtc}
+<br />
+<apex:repeat value="{!info.AgentInfoList}" var="AgentInfo">
+    {!AgentInfo.Username} has priority {!AgentInfo.priorityNumber}.<br />
+</apex:repeat>
+</apex:page>

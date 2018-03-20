@@ -1,0 +1,10 @@
+<apex:page controller="AccountController1">
+              <apex:form >
+                       <apex:pageBlock title="Account Name">
+                               Account Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <apex:selectList value="{!selectedAccId}" size="1">
+                                               <apex:selectOptions value="{!AccountNames}" />
+                                   </apex:selectList>
+                      </apex:pageBlock>
+            </apex:form>
+    </apex:page>

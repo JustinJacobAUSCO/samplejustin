@@ -1,0 +1,15 @@
+<apex:page controller="GlossaryController">
+    <apex:form >
+        <apex:pageBlock Title="JSON Parser Example2 - Multiple Data">
+            <apex:commandButton value="Parse Multiple JSON Data" action="{!parseJSONData}"/>
+        </apex:pageBlock>
+        <br />
+        <apex:pageBlock id="glossaryData">
+            <apex:pageBlockTable value="{!glossaries}" var="glossary">
+                <apex:column headerValue="Glossary Div" value="{!glossary.GlossDiv}"/> 
+              <!--  <apex:column headerValue="Country Capital" value="{!country.countryCapital}"/> -->
+                <!--<apex:column headerValue="Country Currency" value="{!country.countryCurrency}"/> -->
+        </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

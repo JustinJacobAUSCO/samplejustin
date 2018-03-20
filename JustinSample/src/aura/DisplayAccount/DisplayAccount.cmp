@@ -1,0 +1,27 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" controller="AccountAuraClr">
+    <aura:attribute name="AccountList" type="Account[]"/>
+    <aura:attribute name="AccountDetail" type="Contact[]"/>
+    <aura:attribute name="editAccId" type="id"/>
+    <aura:attribute name="isEdit" type="boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div>Select Account</div>
+    <select name="selectItem" label="Select an Account" id="AccList" onchange="{!c.getDetails}" > 
+        <aura:iteration items="{!v.AccountList}" var="acc">   
+            <option value="{!acc.Id}">{!acc.Name}</option>
+        </aura:iteration>
+    </select>
+    <aura:iteration items="{!v.AccountDetail}" var="accdet">   
+        <div>First Name:<ui:outputText value="{!accdet.FirstName}"/></div>
+        <div>Last Name:<ui:outputText value="{!accdet.LastName}"/></div>
+        <div>Email:   <ui:outputText value="{!accdet.Email}"/></div>
+        <!--<button type="button" onclick="{!c.edit}" id="{!accdet.Id}">Edit</button>-->
+        <button type="button" onclick="{!c.edit}" id="{!accdet.Id}">Edit</button>
+       <!-- <lightning:button label="Save" value="{!accdet.Id}" onclick="{!c.saveEvent}" />-->
+        </aura:iteration>
+    <aura:renderIf isTrue="{!v.isEdit}">
+        <center><ui:button label="Save" press="{!c.save}"/></center>
+	<force:recordEdit aura:id="edit" recordId="{!v.editAccId}"/>
+    </aura:renderIf>
+    
+    
+</aura:component>

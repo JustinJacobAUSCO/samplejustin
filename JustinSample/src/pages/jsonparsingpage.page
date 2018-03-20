@@ -1,0 +1,49 @@
+<apex:page >
+  
+<html>
+<body>
+
+<p>Access a JSON object using bracket notation:</p>
+
+<p id="demo"></p>
+
+<script>
+
+var myObj, x;
+myObj = {
+   "glossary": {
+      "title": "example glossary",
+      "GlossDiv": {
+         "title": "S",
+         "GlossList": {
+            "GlossEntry": {
+               "ID": "SGML",
+               "SortAs": "SGML",
+               "GlossTerm": "Standard Generalized Markup Language",
+               "Acronym": "SGML",
+               "Abbrev": "ISO 8879:1986",
+               "GlossDef": {
+                  "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                  "GlossSeeAlso": [
+                     "GML",
+                     "XML"
+                  ]
+               },
+               "GlossSee": "markup"
+            }
+         }
+      }
+   }
+};
+x = myObj.glossary.GlossDiv.GlossList.GlossEntry.ID;
+document.getElementById("demo").innerHTML = x;
+//var test=myObj.glossary.GlossDiv.GlossList.GlossEntry.Abbrev;
+//document.getElementById("demo").innerHTML = test;
+//x=test;
+</script>
+
+</body>
+</html>
+
+
+</apex:page>

@@ -1,0 +1,17 @@
+<aura:component controller="accountEditController" implements="forceCommunity:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="account"  type="Account" />
+    <h1>Test</h1>
+    <form>
+        <ui:inputText aura:id="client"
+            label="{!$ObjectType.Account.fields.Name.Label}"
+            class="form-control"
+            value="{!v.account.Name}"
+            placeholder="test"
+        />
+        <br />
+        <ui:button class="form-control" aura:id="button" label="Save" press="{!c.save}"/>
+        <br />
+    <br />
+    </form>
+</aura:component>
